@@ -1,9 +1,6 @@
-Code Club World
+Code Club Polska
 ===============
 
-A worldwide network of coding clubs for children.
+Kluby kodowania dla dzieci w wieku 9-11 lat prowadzone przez wolontariuszy
 
-**The mission of CodeClubWorld.org** is to give every child in the
-world the chance to learn to code by providing project materials and
-a volunteering framework that supports the running of after-school
-coding clubs.
+Misją Code Club Polska jest umożliwienie każdemu dziecku w Polsce nauki programowania poprzez udostęnianie materiałów do nauki i stworzenie struktur wolontariatu, które wspierają prowadzenie pozalekcyjnych klubów kodowania.
