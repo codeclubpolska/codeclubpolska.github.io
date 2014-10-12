@@ -25,8 +25,14 @@ a:hover, a:focus { color: #006cb0; }
   width: auto; height: auto;
 }
 
-.not-home header.header hgroup {
+.not-home header.header div.logo {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  margin-left: 0;
   width: 106px;
+  height: 78px;
+  padding: 0;
 }
 
 .not-home #nav {
@@ -472,7 +478,7 @@ footer .wrap .button {
     padding-left: 0;
   }
 
-  .not-home header.header hgroup {
+  .not-home header.header div.logo {
     margin-left: -53px;
     width: 106px !important;
   }
