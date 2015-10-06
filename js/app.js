@@ -32,7 +32,6 @@ CodeClubWorld.makeMap = function() {
 
     $.each(clubs, function(i, club) {
       var loc = club.venue.location;
-        var countryCode = club.venue.country.code;
 
       if (!loc) return;
 
