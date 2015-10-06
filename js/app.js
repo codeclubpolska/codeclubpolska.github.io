@@ -18,7 +18,7 @@ CodeClubWorld.makeMap = function() {
       headers     : { 'Authorization': 'Bearer ' + CodeClubWorld.api_token, 'Accept': 'application/vnd.codeclubworld.v'+CodeClubWorld.api_version }
   })
   .done(function(data) {
-    var clubs = data.clubs,
+    var clubs = data,
         markers = [];
 
     var map = new google.maps.Map(el, {
