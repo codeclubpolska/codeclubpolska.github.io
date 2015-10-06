@@ -2,17 +2,22 @@
 
 window.CodeClubWorld = {};
 
-CodeClubWorld.api   = 'https://api.codeclubworld.org';
-CodeClubWorld.token = 'ZTA0YjgyMTZmODljODJhNzA4MzdlYWEyYTY2NGRkNTk=';
-CodeClubWorld.limit = 10000;
+CodeClubWorld.api_token = 'cf2915583866ac3913e138e7ee2826dcb6fff84bea0b86a2eb0010058130c4a4';
+CodeClubWorld.country_code = 'pl';
+CodeClubWorld.api = 'https://api.codeclubworld.org';
+CodeClubWorld.api_version = '2';
 
 CodeClubWorld.makeMap = function() {
   var el = document.getElementById('map');
   if (!el) return;
 
-  var url = CodeClubWorld.api + '/clubs?limit=' + CodeClubWorld.limit;
-
-  $.getJSON(url).then(function(data) {
+  $.ajax({
+      method      : 'GET',
+      url         : CodeClubWorld.api + '/clubs?in_country=' + CodeClubWorld.country_code,
+      contentType : 'application/json',
+      headers     : { 'Authorization': 'Bearer ' + CodeClubWorld.api_token, 'Accept': 'application/vnd.codeclubworld.v'+CodeClubWorld.api_version }
+  })
+  .done(function(data) {
     var clubs = data.clubs,
         markers = [];
 
@@ -23,15 +28,11 @@ CodeClubWorld.makeMap = function() {
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
-      var plClubsCounter = 0;
+      var plClubsCounter = clubs.length;
 
     $.each(clubs, function(i, club) {
       var loc = club.venue.location;
         var countryCode = club.venue.country.code;
-
-        if (countryCode == 'PL') {
-            plClubsCounter++;
-        }
 
       if (!loc) return;
 
