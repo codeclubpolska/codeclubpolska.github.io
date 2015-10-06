@@ -31,12 +31,12 @@ CodeClubWorld.makeMap = function() {
       var plClubsCounter = clubs.length;
 
     $.each(clubs, function(i, club) {
-      var loc = club.venue.location;
+      var loc = club.venue.address;
 
       if (!loc) return;
 
-      var lat = loc.lat,
-          lng = loc.lng;
+      var lat = loc.latitude,
+          lng = loc.longitude;
 
       if (lat === null || lng === null) return;
 
@@ -57,8 +57,8 @@ CodeClubWorld.makeMap = function() {
 
         content.push('<h5 class="name">' + club.venue.name  +'</h5>');
 
-        if (club.venue.city) {
-          content.push('<p class="city">' + club.venue.city + '</p>');
+        if (club.venue.address.city) {
+          content.push('<p class="city">' + club.venue.address.city + '</p>');
         }
 
         content.push(
@@ -67,10 +67,10 @@ CodeClubWorld.makeMap = function() {
           '</p>'
         );
 
-        if (club.venue.website) {
+        if (club.venue.url) {
           content.push(
-            '<a class="website" href="' + club.venue.website + '">' +
-              club.venue.website +
+            '<a class="website" href="' + club.venue.url + '">' +
+              club.venue.url +
             '</a>'
           );
         }
