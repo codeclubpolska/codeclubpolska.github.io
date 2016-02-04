@@ -61,12 +61,6 @@ CodeClubWorld.makeMap = function() {
           content.push('<p class="city">' + club.venue.address.city + '</p>');
         }
 
-        content.push(
-          '<p class="date">Since ' +
-            moment(club.activated_at).format('Do MMMM YYYY') +
-          '</p>'
-        );
-
         if (club.venue.url) {
           content.push(
             '<a class="website" href="' + club.venue.url + '">' +
