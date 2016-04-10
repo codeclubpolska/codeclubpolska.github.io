@@ -62,10 +62,9 @@ CodeClubWorld.makeMap = function() {
         }
 
         if (club.venue.url) {
+          var venueUrl = ensureHTTP(club.venue.url);
           content.push(
-            '<a class="website" href="' + club.venue.url + '">' +
-              club.venue.url +
-            '</a>'
+            '<a class="website" href="' + venueUrl + '">' + venueUrl + '</a>'
           );
         }
 
